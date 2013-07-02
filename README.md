@@ -195,6 +195,7 @@ The `bower.json` defines several options:
   Bower to ignore when installing your package.
 * `dependencies` [hash]: Packages your package depends upon in production.
 * `devDependencies` [hash]: Development dependencies.
+* `substitutions` [string|hash]: Subsitute any dependency with another version, another dependency, multiple dependencies, or ignore the dependency with a falsy value or empty hash.
 
 ```json
 {
@@ -212,6 +213,12 @@ The `bower.json` defines several options:
   },
   "devDependencies": {
     "<test-framework-name>": "<version>"
+  },
+  "substitutions": {
+    "<name>": { "<name>": "<version>" },
+    "<name>": { "<name>": "<version>", "<name>": "<version>" },
+    "<name>": "<version>",
+    "<name>": { }
   }
 }
 ```
@@ -337,6 +344,7 @@ Thanks for assistance and contributions:
 * [@danwrong](https://github.com/danwrong)
 * [@davidmaxwaterman](https://github.com/davidmaxwaterman)
 * [@desandro](https://github.com/desandro)
+* [@dylang](https://github.com/dylang)
 * [@hemanth](https://github.com/hemanth)
 * [@isaacs](https://github.com/isaacs)
 * [@josh](https://github.com/josh)

@@ -366,6 +366,7 @@ describe('package', function () {
     pkg.resolve();
   });
 
+
   it('Should error when copying fails from non existing path', function (next) {
     var pkg = new Package('project', __dirname + '/assets/project-non-existent');
 

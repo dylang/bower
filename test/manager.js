@@ -66,6 +66,25 @@ describe('manager', function () {
     manager.resolve();
   });
 
+
+  it.only('Should substitute dependencies', function (next) {
+    var manager = new Manager([]);
+    manager.cwd = __dirname + '/assets/project-substitutions';
+
+    manager.on('resolve', function () {
+      assert.deepEqual(manager.dependencies.jquery, undefined);
+      assert.deepEqual(manager.dependencies['zepto'][0].version, '1.0.0');
+      next();
+    });
+
+    manager.on('error', function (err) {
+      throw err;
+    });
+
+    manager.resolve();
+  });
+
+
   it('Should resolve nested JSON dependencies even when using another name for bower.json project-wise', function (next) {
     // Using another name for .json file leads to unfetchable deps
     // https://github.com/twitter/bower/issues/205

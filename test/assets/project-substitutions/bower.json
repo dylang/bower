@@ -1,0 +1,10 @@
+{
+  "name": "substitute-deps",
+  "version": "0.0.1",
+  "dependencies": {
+    "package-deps-on-jquery-old": "test/assets/package-deps-on-jquery-old"
+  },
+  "substitutions": {
+    "jquery": { "zepto": "latest" }
+  }
+}
